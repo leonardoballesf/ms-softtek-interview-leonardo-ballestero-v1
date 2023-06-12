@@ -8,7 +8,6 @@ import com.softtek.interview.inditex.business.util.UtilBusiness;
 import com.softtek.interview.inditex.business.util.constants.BusinessConstants;
 import java.util.Comparator;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

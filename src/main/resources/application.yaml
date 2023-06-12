@@ -17,6 +17,7 @@ info:
     type: microservice
     artifact-id: '@project.artifactId@'
     app-group: INTERVIEW
+    
 logging.level:
   com.softtek.interview.inditex.business: TRACE
   com.softtek.interview.inditex.exposeWeb: TRACE
