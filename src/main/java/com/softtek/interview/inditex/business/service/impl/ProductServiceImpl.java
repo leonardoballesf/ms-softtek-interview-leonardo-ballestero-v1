@@ -27,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
         .flatMapMany(count -> count == BusinessConstants.COUNT_ROWS_DB
             ? validateDataIntoPersistence()
             : productRepository.findAll())
-        .filter(productValidator.filterWithQueryParamsValues(productDto))
+        .filter(productValidator.filterWithQueriesParamsValues(productDto))
         .sort(Comparator.comparing(Product::getPriority)
             .reversed())
         .take(BusinessConstants.TAKE_ELEMENT_BY_GET_ALL)

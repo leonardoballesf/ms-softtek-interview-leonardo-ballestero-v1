@@ -1,19 +1,12 @@
 package com.softtek.interview.inditex.exposeWeb;
 
-import com.softtek.interview.inditex.business.model.api.ProductRequest;
 import com.softtek.interview.inditex.business.model.api.ProductResponse;
 import com.softtek.interview.inditex.business.model.domain.ProductDto;
 import com.softtek.interview.inditex.business.model.thirdparty.Product;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.NullValueCheckStrategy;
-import org.mapstruct.NullValuePropertyMappingStrategy;
 
-@Mapper(componentModel = "spring",
-    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-    nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+@Mapper(componentModel = "spring")
 public interface ControllerMapper {
 
   ProductDto parseToDomain(String applyDate, String productIdentifier,String chainId);

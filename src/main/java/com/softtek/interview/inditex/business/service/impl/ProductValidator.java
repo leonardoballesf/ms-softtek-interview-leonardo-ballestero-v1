@@ -30,7 +30,7 @@ public class ProductValidator {
             BusinessConstants.PRODUCT_ID_DESCRIPTION_API_EXCEPTION)));
   }
 
-  public final Predicate<Product> filterWithQueryParamsValues(ProductDto productDto) {
+  public final Predicate<Product> filterWithQueriesParamsValues(ProductDto productDto) {
     return product ->
         isValidDateTime(productDto, product)
             && (productDto.getProductIdentifier().equals(product.getProductid()))

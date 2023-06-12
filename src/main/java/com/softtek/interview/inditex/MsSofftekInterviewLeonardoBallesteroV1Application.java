@@ -10,17 +10,16 @@ import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 
 @SpringBootApplication
 public class MsSofftekInterviewLeonardoBallesteroV1Application {
-	@Bean
-	ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
-		ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
-		initializer.setConnectionFactory(connectionFactory);
-		initializer.setDatabasePopulator(
-				new ResourceDatabasePopulator(new ClassPathResource("SQL/create_table.sql")));
+  @Bean
+  ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
+    ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
+    initializer.setConnectionFactory(connectionFactory);
+    initializer.setDatabasePopulator(
+        new ResourceDatabasePopulator(new ClassPathResource("SQL/create_table.sql")));
 
-		return initializer;
-	}
-	public static void main(String[] args) {
-		SpringApplication.run(MsSofftekInterviewLeonardoBallesteroV1Application.class, args);
-	}
-
+    return initializer;
+  }
+  public static void main(String[] args) {
+    SpringApplication.run(MsSofftekInterviewLeonardoBallesteroV1Application.class, args);
+  }
 }
