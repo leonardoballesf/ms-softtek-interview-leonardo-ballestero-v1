@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+  <springProperty name="service.name" source="spring.application.name"/>
+  <springProperty name="service.version" source="info.project.version" />
+  <springProperty name="service.type" source="info.project.type" />
+  <springProperty name="app.group" source="info.project.app-group" />
+  <springProperty name="custom_converters" source="logging.obfuscation.converter.additional" defaultValue=""/>
+  <!-- Define the console appender -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%highlight(%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger [%method][%line]: %msg%n)</pattern>
+    </encoder>
+  </appender>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern> %d{dd-MM-yyyy HH:mm:ss.SSS} [%thread][%highlight(%-5level)] %logger{36}.%M - %msg%n </pattern>
+    </encoder>
+  </appender>  <!-- Root logger configuration -->
+  <appender name="SAVE-TO-FILE" class="ch.qos.logback.core.FileAppender">
+  <file>logs/application.log</file>
+  <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+    <Pattern> %d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] [%highlight(%-5level)] %logger{36}.%M - %msg%n </Pattern>
+  </encoder>
+  </appender>
+  <root level="info">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="SAVE-TO-FILE"/>
+  </root>
+
+  <logger name="javax.activation" level="WARN"/>
+  <logger name="javax.mail" level="WARN"/>
+  <logger name="javax.xml.bind" level="WARN"/>
+  <logger name="ch.qos.logback" level="WARN"/>
+  <logger name="com.jcabi.manifests" level="INFO" />
+  <logger name="com.codahale.metrics" level="WARN"/>
+  <logger name="com.netflix" level="WARN"/>
+  <logger name="com.netflix.discovery" level="INFO"/>
+  <logger name="com.ryantenney" level="WARN"/>
+  <logger name="com.sun" level="WARN"/>
+  <logger name="com.zaxxer" level="WARN"/>
+  <logger name="org.eclipse.jetty" level="WARN"/>
+  <logger name="org.apache" level="WARN"/>
+  <logger name="org.apache.catalina.startup.DigesterFactory" level="OFF"/>
+  <logger name="org.bson" level="WARN"/>
+  <logger name="org.hibernate.validator" level="WARN"/>
+  <logger name="org.mongodb.driver" level="WARN"/>
+  <logger name="org.reflections" level="WARN"/>
+  <logger name="org.springframework" level="WARN"/>
+  <logger name="org.springframework.web" level="WARN"/>
+  <logger name="org.springframework.security" level="WARN"/>
+  <logger name="org.springframework.cache" level="WARN"/>
+  <logger name="org.springframework.cloud" level="WARN"/>
+  <logger name="org.thymeleaf" level="WARN"/>
+  <logger name="org.xnio" level="WARN"/>
+  <logger name="reactor" level="INFO"/>
+  <logger name="io.netty" level="INFO"/>
+  <logger name="springfox" level="WARN"/>
+  <logger name="sun.rmi" level="WARN"/>
+  <logger name="sun.net.www" level="INFO"/>
+  <logger name="sun.rmi.transport" level="WARN"/>
+  <logger name="com.bcp.atlas" level="INFO"/>
+  <logger name="org.springframework.ws.client.MessageTracing" level="WARN"/>
+  <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+    <resetJUL>true</resetJUL>
+  </contextListener>
+</configuration>

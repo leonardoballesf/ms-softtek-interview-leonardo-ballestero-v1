@@ -1,0 +1,22 @@
+spring:
+  r2dbc:
+    password: '12345'
+    url: r2dbc:h2:file:///./testdb
+    username: sa
+  application:
+    name: 'ms-sofftek-interview-leonardo-ballestero-v1'
+
+  output:
+    ansi:
+      enabled: ALWAYS
+info:
+  project:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+    type: microservice
+    artifact-id: '@project.artifactId@'
+    app-group: INTERVIEW
+logging.level:
+  com.softtek.interview.inditex.business: TRACE
+  com.softtek.interview.inditex.exposeWeb: TRACE
