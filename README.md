@@ -1,5 +1,5 @@
-# MS Softek Interview Leonardo Ballestero V1
-Entrevista de habilidades técnicas para cliente Inditex referente a e-comerce
+# MS Interview Leonardo Ballestero V1
+Entrevista de habilidades técnicas para cliente referente a e-comerce
 
 ## Iniciando
 
